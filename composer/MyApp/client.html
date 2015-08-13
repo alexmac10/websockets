@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Web Socket Client</title>
+</head>
+
+<script>
+	var conn = new WebSocket('ws://localhost:8080');
+conn.onopen = function(e) {
+    console.log("Connection established!");
+};
+
+conn.onmessage = function(e) {
+    console.log(e.data);
+};
+
+setInterval(function() {
+	conn.send('Hello World form ' + navigator.userAgent);
+}, 5 * 1000)
+
+</script>
+<body>
+	
+</body>
+</html>
