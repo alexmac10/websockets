@@ -22,6 +22,7 @@ class Validar_controll extends CI_Controller {
             foreach ($data['resultado'] as $value) {
                 $user = $value['nombre'];
             }
+            $this->consulta->setNotificacion($user);
             session_start();
             $_SESSION['user'] = $user;
             $data['user'] = $user;

@@ -19,4 +19,18 @@ class Validar_model extends CI_Model {
         }
     }
     
+    function setNotificacion($usuario) {
+        $datos = array(
+            'id' => null,
+            'autor' => $usuario,
+            'usuario' => 'alex',
+            'revisada' => 'no',
+            'confirmacion' => 'no',
+            'detalle' => 'ingreso',
+            'url' => 'http://localhost/websockets/pruebaCodeigniter/'
+        );
+        
+        $this->db->insert('notificaciones',$datos); 
+    }
+    
 }
